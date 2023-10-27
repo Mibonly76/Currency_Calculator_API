@@ -1,0 +1,15 @@
+
+https://v6.exchangerate-api.com/v6/080f4ba525f41affd67ccfea/latest/USD
+python -m venv .venv
+.venv\Scripts\activate
+pip install forex_python.converter
+pip install qrcode
+pip install datetime
+pip install python-barcode
+pip install uuid
+pip install waitress
+pip install flask
+pip install python-dotenv
+pip install dotenv
+pip install requests
+pip install os
