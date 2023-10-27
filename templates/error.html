@@ -1,0 +1,23 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Calculator: Error Page!</title>
+    <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Choice from currency, to currency and amount!</h1>
+    <form action="/request">
+        <input type="text" name="from_currency" id="from_currency" placeholder="from currency " />
+        <input type="text" name="to_currency" id="to_currency" placeholder="to currency " />
+        <input type="text" name="amount" id="amount" placeholder="amount " />
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Not correct input data fount!</h2>
+    <h2>Please check again!</h2>
+</body>
