@@ -7,18 +7,26 @@ load_dotenv()
 
 
 def get_currency_rate(currency_in="USD", currency_out="BGN"):
-    request_url_check = f'https://v6.exchangerate-api.com/v6/{os.getenv("API_KEY")}/latest/all'
-    currency_rates_check = requests.get(request_url_check).json()
-    if (currency_in in currency_rates_check["conversion_rates"]
-            and currency_out in currency_rates_check["conversion_rates"]):
-
-        request_url = f'https://v6.exchangerate-api.com/v6/{os.getenv("API_KEY")}/latest/{currency_in}'
-        currency_rates = requests.get(request_url).json()
+    request_url = f'https://v6.exchangerate-api.com/v6/{os.getenv("API_KEY")}/latest/{currency_in}'
+    currency_rates = requests.get(request_url).json()
+    print(currency_rates)
+    if currency_rates['result'] == "success":
         currency_rate = currency_rates["conversion_rates"][f"{currency_out}"]
-
         return currency_rate
     else:
         return 404
+
+
+#    if (currency_in in currency_rates_check["conversion_rates"]
+#            and currency_out in currency_rates_check["conversion_rates"]):
+
+#        request_url = f'https://v6.exchangerate-api.com/v6/{os.getenv("API_KEY")}/latest/{currency_in}'
+#        currency_rates = requests.get(request_url).json()
+#        currency_rate = currency_rates["conversion_rates"][f"{currency_out}"]
+
+#        return currency_rate
+#    else:
+#       return 404
 
 
 def convertor(current_rate, amount):
