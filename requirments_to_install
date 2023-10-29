@@ -1,5 +1,5 @@
 
-https://v6.exchangerate-api.com/v6/080f4ba525f41affd67ccfea/latest/USD
+https://v6.exchangerate-api.com/v6/../latest/USD
 python -m venv .venv
 .venv\Scripts\activate
 pip install forex_python.converter
